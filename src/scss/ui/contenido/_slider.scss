@@ -1,0 +1,38 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.slider {
+    overflow: hidden;
+    position: relative; // las flechas del navigation entra en la imagen porque estan en absolute y pagination tambien se meten
+    &__slide {
+        width: 100%;
+        height: 100%;
+        flex-shrink: 0;
+        position: relative;
+        transition: transform;
+    }
+    &__imagen {
+        width: 100%;
+    }
+    .swiper-button-next, 
+    .swiper-button-prev {
+        color: v.$blanco; // cambiamos el color de las flechas
+    }
+    .swiper-pagination-bullet {
+        background-color: v.$blanco; // cambiamos el color de los puntos de la imagen que se esta mostrando
+        opacity: .5;
+    }
+    .swiper-pagination-bullet-active {
+        background-color: v.$primario;// cambiamos el color para que muestre el punto mezclado con el q esta seleccionado de fondo
+    }
+}
+
+.swiper-slide {
+background-position: center;
+background-size: cover;
+}
+
+.swiper-slide img {
+display: block;
+width: 100%;
+}

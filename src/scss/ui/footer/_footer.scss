@@ -1,0 +1,30 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.footer {
+    padding-bottom: 0;
+    &__grid {
+        @include m.tablet {
+            @include m.grid(3, 2rem);
+        }
+    }
+    &__widget {
+        text-align: center;
+    }
+    &__heading {
+        @include m.heading;
+        color: v.$negro;
+    }
+    &__texto {
+        line-height: 2;
+        text-align: center;
+    }
+    &__copyright {
+        padding: 2rem;
+        margin: 0;
+        text-align: center;
+        border-top: 1px solid darken(v.$grisClaro, 20%);
+        font-size: 1.6rem;
+        color: v.$gris;
+    }
+}
